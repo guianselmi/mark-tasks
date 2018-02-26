@@ -8,7 +8,7 @@ Funcionalidade: Login
     @login @logout
     Cenario: Login do usuário
 
-        Quando faco login com "anselmo@opa.eu" e "123456"
+        Quando faco login com "login@opa.eu" e "123456"
         Entao sou autenticado com sucesso
         E vejo o meu painel de atividades
     
@@ -20,7 +20,7 @@ Funcionalidade: Login
 
         Exemplos:
             | email              | senha       | alerta                     |
-            | anselmo@opa.eu     | abc123      | Senha inválida.            |
+            | login@opa.eu       | abc123      | Senha inválida.            |
             | chulapa@hu3mail.eu | 123456      | Usuário não cadastrado.    |
-            | anselmo@opa.eu     |             | Senha ausente.             |
+            | login@opa.eu       |             | Senha ausente.             |
             |                    | 123456      | Email incorreto ou ausente.|
