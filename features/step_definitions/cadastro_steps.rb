@@ -2,7 +2,7 @@ Dado("que eu acessei a pagina de cadastro") do
   visit 'https://marktasks.herokuapp.com/register'
   expect(page).to have_content 'Criar uma conta Mark7'
 end
-  
+
 Dado("possuo os seguintes dados:") do |table|
   @cadastro = table.rows_hash
 end
@@ -23,5 +23,4 @@ end
 
 Entao("devo ver uma mensagem de alerta {string}") do |mensagem_alerta|
   expect(page).to have_content mensagem_alerta
-  sleep 5
-end                                                                          
+end
