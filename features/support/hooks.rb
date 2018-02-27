@@ -7,4 +7,4 @@ After('@logout') do
   find('a[href$=logout]').click
 end
 
-#1h36m
+#2h17m

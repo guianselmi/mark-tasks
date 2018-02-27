@@ -1,6 +1,7 @@
 Feature: Login
   Para que somente eu possa ver as minhas tarefas
-  Sendo um usuário
+  As a user
+  In order to log into the system
   Posso logar no sistema com meus dados de acesso previamente cadastrados
     
   @login @logout
