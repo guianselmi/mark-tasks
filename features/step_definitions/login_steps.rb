@@ -1,11 +1,9 @@
 When('faco login com {string} e {string}') do |email, password|
-  visit 'https://marktasks.herokuapp.com'
-
   @email = email
 
-  find('input[placeholder="example@gmail.com"]').set email
-  find('input[type=password]').set password
-  find('button[id*=btnLogin]').click
+  @login = LoginPage.new
+  @login.load
+  @login.do_login(email, password)
 end
 
 Then('sou autenticado com sucesso') do
@@ -19,6 +17,5 @@ Then('vejo o meu painel de atividades') do
 end
 
 Then('devo ver a mensagem {string}') do |alert_message|
-  login_alert = find('.alert-login')
-  expect(login_alert.text).to eql alert_message
+  expect(@login.alert.text).to eql alert_message
 end

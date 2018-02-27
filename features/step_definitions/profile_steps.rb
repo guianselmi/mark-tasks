@@ -1,9 +1,7 @@
 Given("I'm authenticated with {string} and {string}") do |email, password|
-  visit 'https://marktasks.herokuapp.com'
-
-  find('input[placeholder="example@gmail.com"]').set email
-  find('input[type=password]').set password
-  find('button[id*=btnLogin]').click
+  @login = LoginPage.new
+  @login.load
+  @login.do_login(email, password)
 end
 
 Given("I access my profile") do
