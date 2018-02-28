@@ -1,10 +1,6 @@
 When('faco login com {string} e {string}') do |email, password|
   @email = email
 
-  @login = LoginPage.new
-  @navbar = Navbar.new
-  @tasks = TasksPage.new
-
   @login.load
   @login.do_login(email, password)
 end
