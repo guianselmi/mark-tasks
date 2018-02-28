@@ -1,5 +1,5 @@
 Given("que eu acessei a pagina de cadastro") do
-  visit 'https://marktasks.herokuapp.com/register'
+  visit '/register'
 end
 
 Given("possuo os seguintes dados:") do |table|

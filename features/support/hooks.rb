@@ -14,4 +14,4 @@ After('@profile_logout') do
   @profile.navbar.bye
 end
 
-#3h10m
+#3h35m
