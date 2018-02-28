@@ -3,6 +3,7 @@ When('faco login com {string} e {string}') do |email, password|
 
   @login = LoginPage.new
   @navbar = Navbar.new
+  @tasks = TasksPage.new
 
   @login.load
   @login.do_login(email, password)
@@ -13,8 +14,7 @@ Then('sou autenticado com sucesso') do
 end
 
 Then('vejo o meu painel de atividades') do
-  page_title = find('.header-title h3')
-  expect(page_title.text).to eql 'Painel de Atividades'
+  expect(@tasks.title.text).to eql 'Painel de Atividades'
 end
 
 Then('devo ver a mensagem {string}') do |alert_message|
