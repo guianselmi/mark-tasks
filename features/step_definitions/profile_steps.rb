@@ -4,8 +4,8 @@ Given("I'm authenticated with {string} and {string}") do |email, password|
 end
 
 Given("I access my profile") do
-  @navbar.user_menu.click
-  @navbar.my_profile.click
+  @tasks.navbar.user_menu.click
+  @tasks.navbar.my_profile.click
 end
 
 When("I complete my register with {string} and {string}") do |company, role|

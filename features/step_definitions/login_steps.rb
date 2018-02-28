@@ -6,7 +6,7 @@ When('faco login com {string} e {string}') do |email, password|
 end
 
 Then('sou autenticado com sucesso') do
-  expect(@navbar.user_menu.text).to eql @email
+  expect(@tasks.navbar.user_menu.text).to eql @email
 end
 
 Then('vejo o meu painel de atividades') do
