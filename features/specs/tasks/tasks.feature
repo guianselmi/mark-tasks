@@ -3,7 +3,7 @@ Feature: Register tasks
   As a user
   I want to register new tasks
 
-  @new_task
+  @new_task @auth
   Scenario: New task
     Given I have a new task with the attributes:
       |title|Read a Ruby book|
