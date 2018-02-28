@@ -1,5 +1,5 @@
 class LoginPage < SitePrism::Page
-  set_url 'https://marktasks.herokuapp.com'
+  set_url '/'
   element :input_email, '#login_email'
   element :input_password, 'input[name=password]'
   element :login_button, 'button[id*=btnLogin]'

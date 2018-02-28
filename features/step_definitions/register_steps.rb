@@ -1,6 +1,5 @@
 Given("que eu acessei a pagina de cadastro") do
   visit 'https://marktasks.herokuapp.com/register'
-  expect(page).to have_content 'Criar uma conta Mark7'
 end
 
 Given("possuo os seguintes dados:") do |table|
@@ -8,12 +7,11 @@ Given("possuo os seguintes dados:") do |table|
 end
 
 When("faco o cadastro") do
+  # fill_in só funciona pra ID e Names
   fill_in 'register_name', with: @register['Name']
   fill_in 'register_email', with: @register['Email']
-  # fill_in 'register_password', with: @register['Senha']
   find('input[type=password]').set @register['Password']
 
-  # click_button 'Cadastrar'
   find('button[type=submit]').click
 end
 
