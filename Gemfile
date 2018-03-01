@@ -8,3 +8,4 @@ gem "ffi", "1.9.18"
 gem "selenium-webdriver"
 gem "capybara"
 gem 'site_prism'
+gem 'faker'
