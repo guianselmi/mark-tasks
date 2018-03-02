@@ -4,6 +4,8 @@ Before do
   @login = LoginPage.new
   @tasks = TasksPage.new
   @profile = ProfilePage.new
+
+  page.current_window.resize_to(1280, 800)
 end
 
 Before('@auth') do
@@ -19,4 +21,4 @@ After('@profile_logout') do
   @profile.navbar.bye
 end
 
-#v4 14m
+#v4 1h33m

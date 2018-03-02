@@ -6,6 +6,8 @@ class Add < SitePrism::Section
   element :input_tags, '.bootstrap-tagsinput input'
   element :save, '#form-submit-button'
 
+  element :alert, '.alert-warn'
+
   def new_task(task, tags)
     input_title.set task['title']
     input_date.set task['date']
