@@ -38,4 +38,11 @@ class TasksPage < SitePrism::Page
     search_field.set title
     search_button.click
   end
+
+  def remove_by_title(title)
+    items.each do |item|
+      puts item
+      # item.find('#delete-button').click if item.text.include?(title)
+    end
+  end
 end
