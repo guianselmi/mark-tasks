@@ -4,22 +4,22 @@ Feature: Register
   I want to register with my personal info
 
 	Scenario: Simple register
-		Given que eu acessei a pagina de cadastro
-		And possuo os seguintes dados:
+		Given I accessed the registration page
+		And I have the following info:
 			| Name     | Anselmo        |
 			| Email    | anselmo@opa.eu |
 			| Password | 123456         |
-		When faco o cadastro
-		Then sou redirecionado para o painel de tarefas
+		When I register
+		Then I'm redirected to the task panel
 	
 	Scenario Outline: Register attempt
-		Given que eu acessei a pagina de cadastro
-		And possuo os seguintes dados:
+		Given I accessed the registration page
+		And I have the following info:
 			| Name     | <name>     |
 			| Email    | <email>    |
 			| Password | <password> |
-		When faco o cadastro
-		Then devo ver uma mensagem de alerta "<alert>"
+		When I register
+		Then I should see the alert message "<alert>"
 
 		Examples:
 			| name    | email          | password | alert                                       |

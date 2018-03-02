@@ -1,13 +1,13 @@
-Given("que eu acessei a pagina de cadastro") do
+Given('I accessed the registration page') do
   visit '/register'
 end
 
-Given("possuo os seguintes dados:") do |table|
+Given('I have the following info:') do |table|
   @register = table.rows_hash
 end
 
-When("faco o cadastro") do
-  # fill_in só funciona pra ID e Names
+When('I register') do
+  # fill_in only works with ID and Names
   fill_in 'register_name', with: @register['Name']
   fill_in 'register_email', with: @register['Email']
   find('input[type=password]').set @register['Password']
@@ -15,10 +15,10 @@ When("faco o cadastro") do
   find('button[type=submit]').click
 end
 
-Then("sou redirecionado para o painel de tarefas") do
+Then("I'm redirected to the task panel") do
   expect(page).to have_content 'Todas as minhas tarefas'
 end
 
-Then("devo ver uma mensagem de alerta {string}") do |alert_message|
+Then('I should see the alert message {string}') do |alert_message|
   expect(page).to have_content alert_message
 end

@@ -1,19 +1,19 @@
 Feature: Login
-  Para que somente eu possa ver as minhas tarefas
+  So that only I can see my tasks
   As a user
-  In order to log into the system
-  Posso logar no sistema com meus dados de acesso previamente cadastrados
+  I want to log into the system with my access info previously registered
     
   @login @logout
   Scenario: User login
-    When faco login com "login@opa.eu" e "123456"
-    Then sou autenticado com sucesso
-    And vejo o meu painel de atividades
+    When I log in with "login@opa.eu" and "123456"
+    Then I'm authenticated successfully
+    And I see my task panel
   
   @login_exp
   Scenario Outline: Login attempt
-    When faco login com "<email>" e "<password>"
-    Then devo ver a mensagem "<alert>"
+    When I log in with "<email>" and "<password>"
+    Then I'm not authenticated
+    And I should see the message "<alert>"
     
     Examples:
       | email              | password | alert                       |
