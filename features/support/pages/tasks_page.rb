@@ -27,7 +27,7 @@ class TasksPage < SitePrism::Page
   section :add, Add, '#add-task-view'
 
   element :title, '.header-title h3'
-  element :new_task, '#insert-button'
+  element :button_new, '#insert-button'
   element :search_field, 'input[name=search]'
   element :search_button, '#search-button'
 
