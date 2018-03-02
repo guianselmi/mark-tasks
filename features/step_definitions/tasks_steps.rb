@@ -1,6 +1,6 @@
 Given('I have a new task with:') do |table|
   @task_table = table.rows_hash
-  @task_table['title'] = "#{@task_table['title']} - #{Faker::Lorem.characters(10)}"
+  @task_table['title'] = "#{@task_table['title']}: #{Faker::LordOfTheRings.location}"
 end
 
 Given("I want to tag this task with:") do |table|

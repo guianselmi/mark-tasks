@@ -1,6 +1,8 @@
 require_relative 'sections'
 
 class ProfilePage < SitePrism::Page
+  set_url '/user_settings/profile'
+  
   section :navbar, Navbar, '#navbar'
   
   element :form, '#user-settings-profile-edit-form'
