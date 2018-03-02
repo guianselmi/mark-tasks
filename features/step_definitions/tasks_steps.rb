@@ -48,9 +48,19 @@ When('I request the removal of this task') do
 end
 
 When('confirm this request') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @tasks.modal_confirm.click
+end
+
+When('cancel this request') do
+  @tasks.modal_cancel.click
 end
 
 Then('this task should not be displayed on the list') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @tasks.search(@task_to_remove['title'])
+  expect(@tasks.page_content.size).to have_content 'Hmm... nenhuma tarefa encontrada :('
+end
+
+Then('this task should still be displayed on the list') do
+  @tasks.search(@task_to_remove['title'])
+  expect(@tasks.items.first).to have_content @task_to_remove['title']
 end

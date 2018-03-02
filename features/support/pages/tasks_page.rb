@@ -26,6 +26,11 @@ class TasksPage < SitePrism::Page
   section :navbar, Navbar, '#navbar'
   section :add, Add, '#add-task-view'
 
+  element :modal_confirm, 'button[data-bb-handler=success]'
+  element :modal_cancel, 'button[data-bb-handler=danger]'
+
+  element :page_content, '#tasks-view'
+
   element :title, '.header-title h3'
   element :button_new, '#insert-button'
   element :search_field, 'input[name=search]'
@@ -41,8 +46,7 @@ class TasksPage < SitePrism::Page
 
   def remove_by_title(title)
     items.each do |item|
-      puts item
-      # item.find('#delete-button').click if item.text.include?(title)
+      item.find('#delete-button').click if item.text.include?(title)
     end
   end
 end
