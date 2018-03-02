@@ -7,7 +7,7 @@ end
 Given('I access my profile') do
   # User access via URL
   # @profile.load
-  
+
   # User access via link on top bar menu
   @tasks.navbar.user_menu.click
   @tasks.navbar.my_profile.click
