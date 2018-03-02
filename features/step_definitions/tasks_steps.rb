@@ -13,5 +13,9 @@ When('I register this task') do
 end
 
 Then('I see this task registered with status {string}') do |task_status|
-  expect(page).to have_content task_status
+  @tasks.wait_for_items
+  expect(@tasks.items.first).to have_content task_status
+
+  @tasks.search(@task_table['title'])
+  expect(@tasks.items.size).to eql 1
 end

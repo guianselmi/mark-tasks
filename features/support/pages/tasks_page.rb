@@ -13,6 +13,7 @@ class Add < SitePrism::Section
     tags.each do |tag|
       input_tags.set tag['tag']
       input_tags.send_keys :tab
+      sleep 0.5 # "Time representing the user thinking"
     end
 
     save.click
@@ -25,4 +26,14 @@ class TasksPage < SitePrism::Page
 
   element :title, '.header-title h3'
   element :new_task, '#insert-button'
+  element :search_field, 'input[name=search]'
+  element :search_button, '#search-button'
+
+  element :table_body, '.table tbody'
+  elements :items, 'table tbody tr'
+
+  def search(title)
+    search_field.set title
+    search_button.click
+  end
 end
