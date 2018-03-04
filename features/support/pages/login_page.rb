@@ -2,7 +2,7 @@ class LoginPage < SitePrism::Page
   set_url '/'
   element :input_email, '#login_email'
   element :input_password, 'input[name=password]'
-  element :login_button, 'button[id*=btnLogin]'
+  element :login_button, 'button[id=btLogin]'
   element :alert, '.alert-login'
 
   def do_login(email, password)

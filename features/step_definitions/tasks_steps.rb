@@ -1,7 +1,7 @@
 ### Register task ###
 Given('I have a new task with:') do |table|
   @task_table = table.rows_hash
-  @task_table['title'] = "#{@task_table['title']}: #{Faker::LordOfTheRings.location}"
+  @task_table['title'] = "#{@task_table['title']}: #{Faker::Lorem.characters(10)}"
 end
 
 Given('I want to tag this task with:') do |table|
@@ -33,8 +33,8 @@ end
 ### Remove task ###
 Given('I have a registered task') do
   @task_to_remove = {
-    'title': "Task to be removed: #{Faker::LordOfTheRings.location}",
-    'date': '01/06/2018'
+    'title' => "Task to be removed: #{Faker::Lorem.characters(10)}",
+    'date' => '01/06/2018'
   }
   @tags = []
 
@@ -56,8 +56,20 @@ When('cancel this request') do
 end
 
 Then('this task should not be displayed on the list') do
-  @tasks.search(@task_to_remove['title'])
-  expect(@tasks.page_content.size).to have_content 'Hmm... nenhuma tarefa encontrada :('
+  # Validating via Search
+  # @tasks.search(@task_to_remove['title'])
+  # expect(@tasks.page_content).to have_content 'Hmm... nenhuma tarefa encontrada :('
+
+  # Validating without using Search
+  @tasks.wait_for_items
+  displayed = false
+  @tasks.items.each do |item|
+    if item.text.include?(@task_to_remove['title'])
+      displayed = true
+      break
+    end
+  end
+  expect(displayed).to be false
 end
 
 Then('this task should still be displayed on the list') do
