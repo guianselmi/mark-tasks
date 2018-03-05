@@ -28,7 +28,7 @@ Given('I have a photo to upload') do
   @photo_slark = File.join(Dir.pwd, 'features/support/fixtures/slark.png')
   @photo_troll = File.join(Dir.pwd, 'features/support/fixtures/troll_warlord.png')
 
-  @photo = [@photo_pangolier, @photo_slark, @troll_warlord].sample
+  @photo = [@photo_pangolier, @photo_slark, @photo_troll].sample
 end
 
 When('I upload my photo') do
