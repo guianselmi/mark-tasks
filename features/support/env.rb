@@ -5,7 +5,7 @@ require 'site_prism'
 require 'faker'
 
 Capybara.configure do |config|
-  config.default_driver = :selenium
+  config.default_driver = :selenium_chrome
   config.app_host = 'https://marktasks.herokuapp.com'
 end
 
