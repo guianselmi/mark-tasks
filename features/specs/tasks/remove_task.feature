@@ -3,7 +3,7 @@ Feature: Remove tasks
   As a registered user
   I want to remove an unwanted task
 
-  @auth @remove @logout
+  @auth @remove @logout @smoke
   Scenario: Remove an unwanted task
     Given I have a registered task
     When I request the removal of this task
@@ -16,7 +16,3 @@ Feature: Remove tasks
     When I request the removal of this task
     And cancel this request
     Then this task should still be displayed on the list
-    
-    
-  
-  

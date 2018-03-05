@@ -3,7 +3,7 @@ Feature: Register tasks
   As a user
   I want to register new tasks
 
-  @new_task @auth @logout
+  @new_task @auth @logout @smoke
   Scenario: New task
     Given I have a new task with:
       | title | Read a Ruby book |

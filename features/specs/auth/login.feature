@@ -3,7 +3,7 @@ Feature: Login
   As a user
   I want to log into the system with my access info previously registered
     
-  @login @logout
+  @login @logout @smoke
   Scenario: User login
     When I log in with "login@opa.eu" and "123456"
     Then I'm authenticated successfully

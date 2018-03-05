@@ -3,6 +3,7 @@ Feature: Register
   As a user who needs this kind of control
   I want to register with my personal info
 
+	@smoke
 	Scenario: Simple register
 		Given I accessed the registration page
 		And I have the following info:
