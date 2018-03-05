@@ -23,14 +23,18 @@ Then('I see the message {string}') do |message|
 end
 
 ### Photo ###
-Given("I have a photo to upload") do
-  @photo = File.join(Dir.pwd, 'features/support/fixtures/pangolier.jpg')
+Given('I have a photo to upload') do
+  @photo_pangolier = File.join(Dir.pwd, 'features/support/fixtures/pangolier.jpg')
+  @photo_slark = File.join(Dir.pwd, 'features/support/fixtures/slark.png')
+  @photo_troll = File.join(Dir.pwd, 'features/support/fixtures/troll_warlord.png')
+
+  @photo = [@photo_pangolier, @photo_slark, @troll_warlord].sample
 end
 
-When("I upload my photo") do
+When('I upload my photo') do
   @profile.upload(@photo)
 end
 
-Then("I should see the upload message {string}") do |message|
+Then('I should see the upload message {string}') do |message|
   expect(@profile.form).to have_content message
 end
