@@ -21,4 +21,11 @@ After('@profile_logout') do
   @profile.navbar.bye
 end
 
-#v4 3h10m
+After do |scenario|
+  scenario_name = scenario.name.downcase.tr(' ', '_')
+  screenshot = "logs/screenshots/#{scenario_name}.png"
+  page.save_screenshot(screenshot)
+  embed(screenshot, 'image/png', 'Click to view the evidence...')
+end
+
+#v4 3h30m
