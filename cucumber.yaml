@@ -1,0 +1,2 @@
+---
+default: --format html --out=logs/features.html
