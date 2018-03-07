@@ -62,6 +62,7 @@ Then('this task should not be displayed on the list') do
 
   # Validating without using Search
   @tasks.wait_for_items
+  sleep 1
   displayed = false
   @tasks.items.each do |item|
     if item.text.include?(@task_to_remove['title'])
