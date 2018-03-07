@@ -23,9 +23,9 @@ end
 
 After do |scenario|
   scenario_name = scenario.name.downcase.tr(' ', '_')
+  scenario_name.gsub!(/([_@#!%()\-=;><,{}\~\[\]\.\/\?\"\*\^\$\+\-]+)/, '')
   screenshot = "logs/screenshots/#{scenario_name}.png"
   page.save_screenshot(screenshot)
   embed(screenshot, 'image/png', 'Click to view the evidence...')
 end
 
-#v4 3h30m
