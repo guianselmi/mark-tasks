@@ -16,3 +16,9 @@ Feature: Remove tasks
     When I request the removal of this task
     And cancel this request
     Then this task should still be displayed on the list
+
+  @auth @remove_all @logout
+  # Doing for fun the Scenario below. That's why it's incomplete, but WORKING :D
+  Scenario: Remove all tasks
+    Given I want to remove all tasks
+  

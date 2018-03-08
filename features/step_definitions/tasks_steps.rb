@@ -30,6 +30,7 @@ Then('I should see the message {string} when trying to register') do |message|
   expect(@tasks.add.alert.text).to eql message
 end
 
+
 ### Remove task ###
 Given('I have a registered task') do
   @task_to_remove = {
@@ -76,4 +77,19 @@ end
 Then('this task should still be displayed on the list') do
   @tasks.search(@task_to_remove['title'])
   expect(@tasks.items.first).to have_content @task_to_remove['title']
+end
+
+
+### Remove all tasks ###
+Given('I want to remove all tasks') do
+  until @tasks.page.has_content?'nenhuma tarefa cadastrada :|'
+    @tasks.wait_for_items
+    @removable_task = @tasks.items.first
+    puts @removable_task.text
+    @removable_task.find('#delete-button').click
+    @tasks.modal_confirm.click
+    @tasks.wait_for_items
+  end
+
+  puts 'All tasks removed! :D' if @tasks.page.has_content?'nenhuma tarefa cadastrada :|'
 end
